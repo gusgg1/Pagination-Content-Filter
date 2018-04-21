@@ -11,16 +11,16 @@ for (let i = 10; i < list.length; i++) {
 }
 
 // hiding the list of students
-function hideAll() {
-  for (let i = 0; i < list.length; i++) {
-    list[i].style.display = 'none';
+function hideElements(elements) {
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].style.display = 'none';
   }
 }
 
 // Shows page with students according to page number
 function showPage(pageNumber, studentList) {
   // first hide all students on the page
-  hideAll();
+  hideElements(list);
   // Then loop through all students in our student list argument
   for (let i = 0; i < studentList.length; i++) {
     // if student should be on this page number
@@ -108,6 +108,7 @@ function searchList() {
   // remove the previous page link section
   const divPagination = document.querySelector('.pagination');
   divPagination.style.display = 'none';    
+  const paginations = document.querySelectorAll('.pagination');
   // Loop over the student list, and for each student…
   let matched = [];
   for (let i = 0; i < list.length; i++) {
@@ -125,11 +126,13 @@ function searchList() {
     // ...display a “no student’s found” message
     h2.textContent = 'student(s) not found';
     h2.style.color = 'red';
+    hideElements(paginations);
   }
   // if student(s) found resets elements to initial state
-  if (matched.length > 0) {
+  if (matched.length > 0 && matched.length < 9) {
     h2.textContent = 'students';
     h2.style.color = 'initial';
+    hideElements(paginations);
   }
   // If over ten students were found…
   if (matched.length > 9) {
