@@ -117,3 +117,13 @@ body{
       background-color: #4ba6c3;
       color: #fff;
     }
+
+.reload {
+  float: right;
+  font-weight: 900;
+  color: #4ba6c3;
+  cursor: pointer;
+  margin-top: -50px;
+  margin-right: -50px;
+  font-size: 20px;
+}

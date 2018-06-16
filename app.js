@@ -3,6 +3,7 @@
 const list = document.querySelectorAll('li');
 const divPage = document.querySelector('.page');
 const divHeader = document.querySelector('.page-header');
+const divX = document.querySelector('.reload');
 
 
 // Showing first 10 students when page loads.
@@ -146,7 +147,15 @@ function searchList() {
   input.value = '';
 }
 
+function hideX() {
+  divX.style.display = 'none';
+}
 
+function showX() {
+  divX.style.display = '';
+}
+
+hideX();
 searchHTML();
 appendPageLinks(list);
 
@@ -157,20 +166,12 @@ buttonSearch.addEventListener('click', function() {
   const input = document.querySelector('input');
   if (input.value) {
     searchList();
+    showX();
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
+divX.addEventListener('click', function() {
+  window.location.reload();
+});
 
 

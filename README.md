@@ -13,3 +13,4 @@
 * If the search results in less than 10 students then the pagination links won't be displayed.
 * If more than 10 students the pagination links are added accordingly.
 * If no matches are found by the search, there is a message in the HTML to tell the user there are no matches.
+* When a search has been initiated a refresh button (x) appears at the right corner of the student container.
